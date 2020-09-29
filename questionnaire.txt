@@ -1,0 +1,23 @@
+à qui ça va servir ?
+  - n'importe quelle entreprise (dans des bureaux) (sauf freelance)
+
+faire version manager et employés
+
+
+Gérez vous une équipe/groupe de personnes ?
+
+==== EMPLOYE ====
+- Combien de temps mettez-vous à vous mettre en place en arrivant au travail ? (consulter ses mails, )
+- Êtes-vous heureux au travail ?
+- Pensez-vous à exprimer vos sentiments au travail ?
+- Pensez-vous qu'il est facile de le faire ?
+- En cas de problème au travail, pensez-vous qu'il est facile de l'exprimer ?
+- Pensez-vous qu'un outil qui vous y aiderait ?
+- Pensez-vous qu'il est plus facile d'exprimer ses problèmes sous couvert d'anonymat ?
+
+- Quelles seraient vos attentes par rapport à ce genre d'application ?
+
+==== MANAGER ====
+- Intéressez-vous souvent au bien-être de vos des personnes que vous gérez ?
+- Trouvez-vous qu'il est facile de récupérer leurs impressions ?
+- 

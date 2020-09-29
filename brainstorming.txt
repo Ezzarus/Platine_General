@@ -1,0 +1,36 @@
+==== EMPLOYE ====
+- donner son humeur
+  --> sous catégories en cas de problème ?
+  --> roue avec couleurs ou système équivalent ?
+- donner son ressenti sur plusieurs sujets
+- répondre à des sondages, questionnaires
+- demander une formation, du nouveau matériel, (un rendez-vous ?)
+- anonymat ? (comment le garantir ?) ==> charte
+  --> à voir selon le contexte
+
+==== RH/SUPERIEURS ====
+- créer/envoyer des sondages, questionnaires aux employés
+- consulter les réponses
+  --> filtrer par catégorie si problème
+- consulter l'humeur des employés:
+  --> stats (différents facteurs de comparaison ?)
+    ==> individuel/équipe/site/entreprise, jour/semaine/mois/année/projet
+
+==== TECHNIQUE/GENERAL ====
+- un git par service + git général ?
+  --> script de lancement synchro ?
+- mise en place intégration continue (Travis ?)
+- déploiement: serveur perso/serveur fourni par la fac ?
+
+==== TECHNIQUE/BACK-END ====
+- micro-services Java Spring + Maven (A REFLECHIR !!!)
+  --> un service par idée/fonctionnalité ?
+- API REST
+
+==== TECHNIQUE/FRONT-END ====
+- Node-JS
+
+==== COMMUNICATION ====
+- page Facebook
+- LinkedIn
+- logo ?
