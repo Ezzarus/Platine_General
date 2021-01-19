@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "********** mise en production *********" 
+cd /home/lucas/Platine.git/api
+unset GIT_DIR
+git pull origin master
+sudo mvn spring-boot:run
