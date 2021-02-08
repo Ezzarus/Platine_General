@@ -6,11 +6,11 @@ import java.util.List;
 @Entity
 @Table(name = "categorie")
 public class Categorie {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String intitule;
-
-    @OneToMany(mappedBy = "categorie")
-    private List<Probleme> probleme;
 
     public Categorie() {
     }
@@ -20,8 +20,6 @@ public class Categorie {
         this.intitule = intitule;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getId() {
         return id;
     }
@@ -38,11 +36,4 @@ public class Categorie {
         this.intitule = intitule;
     }
 
-    public List<Probleme> getProbleme() {
-        return probleme;
-    }
-
-    public void setProbleme(List<Probleme> probleme) {
-        this.probleme = probleme;
-    }
 }

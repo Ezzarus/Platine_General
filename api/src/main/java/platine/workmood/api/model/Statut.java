@@ -6,11 +6,11 @@ import java.util.List;
 @Entity
 @Table(name = "statut")
 public class Statut {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String intitule;
-
-    @OneToMany(mappedBy = "statut")
-    private List<Probleme> probleme;
 
     public Statut() {
     }
@@ -38,11 +38,4 @@ public class Statut {
         this.intitule = intitule;
     }
 
-    public List<Probleme> getProbleme() {
-        return probleme;
-    }
-
-    public void setProbleme(List<Probleme> probleme) {
-        this.probleme = probleme;
-    }
 }

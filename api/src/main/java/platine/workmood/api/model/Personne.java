@@ -6,12 +6,12 @@ import java.util.List;
 @Entity
 @Table(name = "personne")
 public class Personne {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nom;
     private String prenom;
-
-    @OneToMany(mappedBy = "personne")
-    private List<Probleme> probleme;
 
     public Personne() {
     }
@@ -48,11 +48,4 @@ public class Personne {
         this.prenom = prenom;
     }
 
-    public List<Probleme> getProbleme() {
-        return probleme;
-    }
-
-    public void setProbleme(List<Probleme> probleme) {
-        this.probleme = probleme;
-    }
 }
