@@ -1,5 +1,7 @@
 package platine.workmood.api.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -124,6 +126,7 @@ public class Probleme {
         this.auteur = auteur;
     }
 
+    @JsonBackReference
     @ManyToMany
     @JoinTable(name = "probleme_personne",
             joinColumns = @JoinColumn(name = "probleme_id"),
