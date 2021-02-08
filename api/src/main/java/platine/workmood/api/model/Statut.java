@@ -7,8 +7,6 @@ import java.util.List;
 @Table(name = "statut")
 public class Statut {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String intitule;
 
