@@ -15,9 +15,6 @@ public class Personne {
     private String nom;
     private String prenom;
 
-    @ManyToMany(mappedBy = "destinataires")
-    private Set<Probleme> probleme = new HashSet<>();
-
     public Personne() {
     }
 
@@ -27,8 +24,6 @@ public class Personne {
         this.prenom = prenom;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getId() {
         return id;
     }
