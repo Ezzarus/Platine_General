@@ -70,7 +70,6 @@ public class Personne {
         this.problemesCrees = problemesCrees;
     }
 
-    @JsonManagedReference
     @ManyToMany(mappedBy="destinataires")
     public Set<Probleme> getProbleme() {
         return probleme;
