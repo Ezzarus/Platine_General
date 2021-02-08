@@ -5,6 +5,9 @@ import javax.persistence.*;
 @Entity
 @Table(name = "commentaire")
 public class Commentaire {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String dateHeure;
     private boolean anonyme;

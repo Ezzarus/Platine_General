@@ -6,6 +6,8 @@ import javax.persistence.*;
 @Table(name = "probleme")
 public class Probleme {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @ManyToOne
@@ -19,7 +21,7 @@ public class Probleme {
 
     @ManyToOne
     @JoinColumn(name="personne_id")
-    private Personne personne;
+    private Personne auteur;
 
     private String dateHeure;
 
