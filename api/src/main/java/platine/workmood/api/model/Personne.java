@@ -1,7 +1,9 @@
 package platine.workmood.api.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "personne")
@@ -12,6 +14,9 @@ public class Personne {
     private int id;
     private String nom;
     private String prenom;
+
+    @ManyToMany(mappedBy = "destinataires")
+    private Set<Probleme> probleme = new HashSet<>();
 
     public Personne() {
     }
