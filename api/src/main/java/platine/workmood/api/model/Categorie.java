@@ -7,8 +7,6 @@ import java.util.List;
 @Table(name = "categorie")
 public class Categorie {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String intitule;
 
@@ -20,6 +18,8 @@ public class Categorie {
         this.intitule = intitule;
     }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getId() {
         return id;
     }
