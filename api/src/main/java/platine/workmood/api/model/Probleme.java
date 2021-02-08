@@ -1,6 +1,7 @@
 package platine.workmood.api.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -10,30 +11,14 @@ public class Probleme {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
-    @ManyToOne
-    @JoinColumn(name="categorie_id")
     private Categorie categorie;
-
     private String titre;
     private String description;
     private boolean anonyme;
     private String portee; //le probleme est public ou prive
-
-    @ManyToOne
-    @JoinColumn(name="personne_id")
     private Personne auteur;
-
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "probleme_personne",
-            joinColumns = @JoinColumn(name = "probleme_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "personne_id", referencedColumnName = "id"))
     private Set<Personne> destinataires;
-
     private String dateHeure;
-
-    @ManyToOne
-    @JoinColumn(name="statut_id")
     private Statut statut;
 
     private int nbVues;
@@ -117,5 +102,47 @@ public class Probleme {
 
     public void setModeration(boolean moderation) {
         this.moderation = moderation;
+    }
+
+    @ManyToOne
+    @JoinColumn(name="categorie_id")
+    public Categorie getCategorie() {
+        return categorie;
+    }
+
+    public void setCategorie(Categorie categorie) {
+        this.categorie = categorie;
+    }
+
+    @ManyToOne
+    @JoinColumn(name="personne_id")
+    public Personne getAuteur() {
+        return auteur;
+    }
+
+    public void setAuteur(Personne auteur) {
+        this.auteur = auteur;
+    }
+
+    @ManyToMany
+    @JoinTable(name = "probleme_personne",
+            joinColumns = @JoinColumn(name = "probleme_id"),
+            inverseJoinColumns = @JoinColumn(name = "personne_id"))
+    public Set<Personne> getDestinataires() {
+        return destinataires;
+    }
+
+    public void setDestinataires(Set<Personne> destinataires) {
+        this.destinataires = destinataires;
+    }
+    
+    @ManyToOne
+    @JoinColumn(name="statut_id")
+    public Statut getStatut() {
+        return statut;
+    }
+
+    public void setStatut(Statut statut) {
+        this.statut = statut;
     }
 }
