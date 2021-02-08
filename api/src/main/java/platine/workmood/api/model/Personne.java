@@ -1,6 +1,7 @@
 package platine.workmood.api.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "personne")
@@ -8,6 +9,9 @@ public class Personne {
     private int id;
     private String nom;
     private String prenom;
+
+    @OneToMany(mappedBy = "personne")
+    private List<Probleme> probleme;
 
     public Personne() {
     }
@@ -42,5 +46,13 @@ public class Personne {
 
     public void setPrenom(String prenom) {
         this.prenom = prenom;
+    }
+
+    public List<Probleme> getProbleme() {
+        return probleme;
+    }
+
+    public void setProbleme(List<Probleme> probleme) {
+        this.probleme = probleme;
     }
 }
