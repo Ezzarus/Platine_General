@@ -1,19 +1,15 @@
 package platine.workmood.api.model;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "personne")
 public class Personne {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nom;
     private String prenom;
+    private Role role;
 
     public Personne() {
     }
@@ -24,6 +20,8 @@ public class Personne {
         this.prenom = prenom;
     }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getId() {
         return id;
     }
@@ -48,4 +46,13 @@ public class Personne {
         this.prenom = prenom;
     }
 
+    @ManyToOne
+    @JoinColumn(name="role_id")
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
 }
