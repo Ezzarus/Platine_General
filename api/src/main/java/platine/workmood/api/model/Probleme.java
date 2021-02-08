@@ -7,11 +7,26 @@ import javax.persistence.*;
 public class Probleme {
 
     private int id;
+
+    @ManyToOne
+    @JoinColumn(name="categorie_id")
+    private Categorie categorie;
+
     private String titre;
     private String description;
     private boolean anonyme;
     private String portee; //le probleme est public ou prive
+
+    @ManyToOne
+    @JoinColumn(name="personne_id")
+    private Personne personne;
+
     private String dateHeure;
+
+    @ManyToOne
+    @JoinColumn(name="statut_id")
+    private Statut statut;
+
     private int nbVues;
     private boolean moderation; //le probleme peut etre signale comme inaproprie ou irrespectueux
 
