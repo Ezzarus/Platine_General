@@ -1,6 +1,7 @@
 package platine.workmood.api.model;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "personne")
@@ -10,6 +11,7 @@ public class Personne {
     private String nom;
     private String prenom;
     private Role role;
+    private Set<Probleme> probleme;
 
     public Personne() {
     }
@@ -54,5 +56,14 @@ public class Personne {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    @ManyToMany(mappedBy="destinataires")
+    public Set<Probleme> getProbleme() {
+        return probleme;
+    }
+
+    public void setProbleme(Set<Probleme> probleme) {
+        this.probleme = probleme;
     }
 }
