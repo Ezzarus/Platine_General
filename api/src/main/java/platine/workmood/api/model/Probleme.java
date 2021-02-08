@@ -1,6 +1,7 @@
 package platine.workmood.api.model;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "probleme")
@@ -22,6 +23,12 @@ public class Probleme {
     @ManyToOne
     @JoinColumn(name="personne_id")
     private Personne auteur;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "probleme_personne",
+            joinColumns = @JoinColumn(name = "probleme_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "personne_id", referencedColumnName = "id"))
+    private Set<Personne> destinataires;
 
     private String dateHeure;
 
