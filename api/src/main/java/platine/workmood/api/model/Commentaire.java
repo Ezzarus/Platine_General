@@ -11,6 +11,8 @@ public class Commentaire {
     private int id;
     private String dateHeure;
     private boolean anonyme;
+    private Probleme probleme;
+    private Personne auteur;
 
     public Commentaire() {
     }
@@ -45,5 +47,25 @@ public class Commentaire {
 
     public void setAnonyme(boolean anonyme) {
         this.anonyme = anonyme;
+    }
+
+    @ManyToOne
+    @JoinColumn(name="probleme_id")
+    public Probleme getProbleme() {
+        return probleme;
+    }
+
+    public void setProbleme(Probleme probleme) {
+        this.probleme = probleme;
+    }
+
+    @ManyToOne
+    @JoinColumn(name="personne_id")
+    public Personne getAuteur() {
+        return auteur;
+    }
+
+    public void setAuteur(Personne auteur) {
+        this.auteur = auteur;
     }
 }
