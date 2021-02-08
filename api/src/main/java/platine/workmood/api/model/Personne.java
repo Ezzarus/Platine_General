@@ -11,6 +11,7 @@ public class Personne {
     private String nom;
     private String prenom;
     private Role role;
+    private Set<Probleme> problemesCrees;
     private Set<Probleme> probleme;
 
     public Personne() {
@@ -56,6 +57,15 @@ public class Personne {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    @OneToMany(mappedBy = "auteur")
+    public Set<Probleme> getProblemesCrees() {
+        return problemesCrees;
+    }
+
+    public void setProblemesCrees(Set<Probleme> problemesCrees) {
+        this.problemesCrees = problemesCrees;
     }
 
     @ManyToMany(mappedBy="destinataires")
