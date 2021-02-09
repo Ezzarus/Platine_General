@@ -1,7 +1,6 @@
 package platine.workmood.api.model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
+import com.fasterxml.jackson.annotation.*;
 import javax.persistence.*;
 import java.util.Set;
 
@@ -61,6 +60,8 @@ public class Personne {
         this.role = role;
     }
 
+
+    @JsonIgnoreProperties({"auteur", "destinataires"})
     @OneToMany(mappedBy = "auteur")
     public Set<Probleme> getProblemesCrees() {
         return problemesCrees;
@@ -70,6 +71,7 @@ public class Personne {
         this.problemesCrees = problemesCrees;
     }
 
+    @JsonIgnoreProperties({"auteur", "destinataires"})
     @ManyToMany(mappedBy="destinataires")
     public Set<Probleme> getProbleme() {
         return probleme;

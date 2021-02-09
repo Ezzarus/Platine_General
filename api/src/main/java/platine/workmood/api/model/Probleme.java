@@ -1,6 +1,7 @@
 package platine.workmood.api.model;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
@@ -31,13 +32,17 @@ public class Probleme {
     public Probleme() {
     }
 
-    public Probleme(int id, String titre, String description, boolean anonyme, String portee, String dateHeure, int nbVues, boolean moderation) {
+    public Probleme(int id, Categorie categorie, String titre, String description, boolean anonyme, String portee, Personne auteur, Set<Personne> destinataires, String dateHeure, Statut statut, int nbVues, boolean moderation) {
         this.id = id;
+        this.categorie = categorie;
         this.titre = titre;
         this.description = description;
         this.anonyme = anonyme;
         this.portee = portee;
+        this.auteur = auteur;
+        this.destinataires = destinataires;
         this.dateHeure = dateHeure;
+        this.statut = statut;
         this.nbVues = nbVues;
         this.moderation = moderation;
     }
@@ -118,6 +123,7 @@ public class Probleme {
         this.categorie = categorie;
     }
 
+    @JsonIgnoreProperties({"probleme", "problemesCrees"})
     @ManyToOne
     @JoinColumn(name="personne_id")
     public Personne getAuteur() {
@@ -127,7 +133,8 @@ public class Probleme {
     public void setAuteur(Personne auteur) {
         this.auteur = auteur;
     }
-
+    
+    @JsonIgnoreProperties({"probleme", "problemesCrees"})
     @ManyToMany
     @JoinTable(name = "probleme_personne",
             joinColumns = @JoinColumn(name = "probleme_id"),
