@@ -133,7 +133,7 @@ public class Probleme {
     public void setAuteur(Personne auteur) {
         this.auteur = auteur;
     }
-
+    
     @JsonIgnoreProperties({"probleme", "problemesCrees"})
     @ManyToMany
     @JoinTable(name = "probleme_personne",
